@@ -1,7 +1,17 @@
 import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import IndexPage from "./pages/IndexPage";
+import DetailPage from "./pages/DetailPage";
 
 function App() {
-  return <div>Hello Pokedex</div>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<IndexPage />} />
+        <Route path="/:Id" element={<DetailPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
