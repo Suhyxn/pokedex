@@ -2,6 +2,7 @@ import React from "react";
 import styled from "@emotion/styled/macro";
 import { Ability, Color, Type } from "../types";
 import { mapColorToHex, mapTypeToHex } from "../utils";
+import Abilities from "./Abilities";
 
 const Base = styled.article`
   padding: 20px;
@@ -173,6 +174,7 @@ function About({
           </InfoItem>
         </InfoContainer>
       </InfoContainerWrapper>
+      {abilities && <Abilities abilities={abilities} />}
     </Base>
   );
 }

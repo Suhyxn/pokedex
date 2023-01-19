@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled/macro";
-import { Color } from "../types";
+import { Ability, Color } from "../types";
 import { mapColorToHex } from "../utils";
 
 const Title = styled.h4<{ color: string }>`
@@ -45,6 +45,7 @@ const Description = styled.span`
 `;
 
 interface Props {
+  abilities: Array<Ability>;
   color?: Color;
 }
 
