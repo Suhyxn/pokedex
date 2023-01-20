@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled/macro";
 import { Color } from "../types";
+import { mapColorToHex } from "../utils";
 
 const Base = styled.div`
   margin-top: 32px;
@@ -60,7 +61,7 @@ interface Props {
 function Evolution({ url, color }: Props) {
   return (
     <Base>
-      <Title></Title>
+      <Title color={mapColorToHex(color?.name)}></Title>
       <List></List>
     </Base>
   );
