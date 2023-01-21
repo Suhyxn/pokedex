@@ -94,9 +94,9 @@ const InfoItemValue = styled.span<{ color: string }>`
 interface Props {
   isLoading: boolean;
   color?: Color;
-  growthRate?: string;
+  growthRate?: number;
   flavorText?: string;
-  genderRate?: number;
+  genderRate?: string;
   isLegendary?: boolean;
   isMythical?: boolean;
   types?: Array<Type>;
