@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
+import styled from "@emotion/styled/macro";
 import About from "../components/About";
 import Evolution from "../components/Evolution";
 import PokemonInfo from "../components/PokemonInfo";
@@ -14,6 +15,16 @@ type Params = {
 };
 
 type Tab = "about" | "stats" | "evolution";
+
+const Container = styled.section`
+  display: flex;
+  flex-direction: column;
+`;
+
+const TabsWrapper = styled.div`
+  padding-right: 20px;
+  margin: 24px auto 0;
+`;
 
 function DetailPage() {
   const { id } = useParams<Params>();
@@ -61,43 +72,41 @@ function DetailPage() {
   };
 
   return (
-    <>
+    <Container>
       <PokemonInfo id={id} name={name} types={types} color={color} />
-      <Tabs
-        tab={selectedTab}
-        onClick={handleClick}
-        color={{ name: "red", url: "" }}
-      />
-      {selectedTab === "about" && (
-        <About
-          isLoading={pokemonResult.isLoading || speciesResult.isLoading}
-          color={color}
-          genderRate={growthRate}
-          isLegendary={isLegendary}
-          isMythical={isMythical}
-          types={types}
-          weight={weight}
-          height={height}
-          baseExp={baseExp}
-          abilities={abilities}
-        />
-      )}
-      {selectedTab === "stats" && (
-        <Stats
-          isLoading={pokemonResult.isLoading || speciesResult.isLoading}
-          color={color}
-          stats={stats}
-        />
-      )}
-      {selectedTab === "evolution" && (
-        <Evolution
-          id={id}
-          isLoading={speciesResult.isLoading}
-          color={color}
-          url={evolutionChainUrl}
-        />
-      )}
-    </>
+      <TabsWrapper>
+        <Tabs tab={selectedTab} onClick={handleClick} color={color} />
+        {selectedTab === "about" && (
+          <About
+            isLoading={pokemonResult.isLoading || speciesResult.isLoading}
+            color={color}
+            genderRate={growthRate}
+            isLegendary={isLegendary}
+            isMythical={isMythical}
+            types={types}
+            weight={weight}
+            height={height}
+            baseExp={baseExp}
+            abilities={abilities}
+          />
+        )}
+        {selectedTab === "stats" && (
+          <Stats
+            isLoading={pokemonResult.isLoading || speciesResult.isLoading}
+            color={color}
+            stats={stats}
+          />
+        )}
+        {selectedTab === "evolution" && (
+          <Evolution
+            id={id}
+            isLoading={speciesResult.isLoading}
+            color={color}
+            url={evolutionChainUrl}
+          />
+        )}
+      </TabsWrapper>
+    </Container>
   );
 }
 
