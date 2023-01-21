@@ -8,6 +8,7 @@ const List = styled.ul`
   margin: 0;
   padding: 0;
   display: flex;
+  justify-content: center;
 `;
 
 const ListItem = styled.li`

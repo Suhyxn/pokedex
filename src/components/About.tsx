@@ -5,6 +5,7 @@ import { mapColorToHex, mapTypeToHex } from "../utils";
 import Abilities from "./Abilities";
 
 const Base = styled.article`
+  width: 100%;
   padding: 20px;
 `;
 
@@ -151,7 +152,7 @@ function About({
           <InfoItem>
             <InfoItemLabel>Gender</InfoItemLabel>
             <InfoItemValue color={mapColorToHex(color?.name)}>
-              {genderRate === -1 ? "Unknown" : "Male / Female"}
+              {genderRate === "-1" ? "Unknown" : "Male / Female"}
             </InfoItemValue>
           </InfoItem>
           <InfoItem>

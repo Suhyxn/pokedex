@@ -4,6 +4,7 @@ import { Color, Stat } from "../types";
 import { mapColorToHex } from "../utils";
 
 const Base = styled.div`
+  width: 100%;
   margin-top: 32px;
   padding: 0 20px 20px;
 `;
