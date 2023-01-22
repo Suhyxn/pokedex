@@ -2,6 +2,7 @@ import React from "react";
 import styled from "@emotion/styled/macro";
 import { Ability, Color } from "../types";
 import { mapColorToHex } from "../utils";
+import useAbilities from "../hooks/useAbilities";
 
 const Title = styled.h4<{ color: string }>`
   margin: 0;
@@ -49,15 +50,22 @@ interface Props {
   color?: Color;
 }
 
-function Abilities({ color }: Props) {
+function Abilities({ abilities, color }: Props) {
+  const result = useAbilities(abilities);
+
   return (
     <Base>
       <Title color={mapColorToHex(color?.name)}>Abilities</Title>
       <List>
-        <ListItem>
-          <Label>Label</Label>
-          <Description>Description</Description>
-        </ListItem>
+        {result.map(
+          ({ data }, idx) =>
+            data && (
+              <ListItem>
+                <Label>{data.data.name}</Label>
+                <Description>{data.data.effect_entries[0].effect}</Description>
+              </ListItem>
+            )
+        )}
       </List>
     </Base>
   );
