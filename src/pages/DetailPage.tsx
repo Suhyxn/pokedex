@@ -23,7 +23,7 @@ const Container = styled.section`
 
 const TabsWrapper = styled.div`
   padding-right: 20px;
-  margin: 24px auto 0;
+  margin: 24px 10px 0;
 `;
 
 function DetailPage() {
