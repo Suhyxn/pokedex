@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "@emotion/styled/macro";
 import { Chain, Color } from "../types";
 import { mapColorToHex } from "../utils";
-import useEvolutionChain from "../hooks/useEvolutionChainl";
+import useEvolutionChain from "../hooks/useEvolutionChain";
 import EvolutionStage from "./EvolutionStage";
 
 const Base = styled.div`
