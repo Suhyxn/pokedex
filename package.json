@@ -28,6 +28,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "homepage": "https://pokedex2023.netlify.app/",
   "eslintConfig": {
     "extends": [
       "react-app",
