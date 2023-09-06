@@ -7,4 +7,3 @@
 ## 🌐 배포 URL
 
 - [Pokédex 바로가기](https://pokedex2023.netlify.app/)
-- [Pokédex 상세페이지](https://pokedex2023.netlify.app/1)
